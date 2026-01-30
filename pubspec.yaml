@@ -1,6 +1,6 @@
 name: flutter_adaptive_kit
 description: A comprehensive Flutter package for building responsive and adaptive UIs. Combines design size scaling, device detection, breakpoints, and extension methods in one unified API.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/DrRaspec/flutter_adaptive_ui
 repository: https://github.com/DrRaspec/flutter_adaptive_ui
 issue_tracker: https://github.com/DrRaspec/flutter_adaptive_ui/issues

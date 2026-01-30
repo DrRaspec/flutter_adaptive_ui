@@ -2,8 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0] - 2026-01-30
+## [0.1.1] - 2026-01-30
 
+### Changed
+- Removed package comparison table from README
+
+## [0.1.0] - 2026-01-30
 
 ### Added
 
