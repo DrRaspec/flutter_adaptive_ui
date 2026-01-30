@@ -217,22 +217,6 @@ cd example
 flutter run
 ```
 
-## Comparison with Other Packages
-
-| Feature | flutter_screenutil | sizer | responsive_builder | **adaptive_ui** |
-|---------|-------------------|-------|-------------------|-----------------|
-| Design size init | ✅ | ❌ | ❌ | ✅ |
-| Extension methods | `.w`/`.h` | `.w`/`.h` | ❌ | `.aw`/`.ah` |
-| Device type detection | ❌ | Basic | ✅ | ✅ |
-| Foldable support | ❌ | ❌ | ❌ | ✅ |
-| Custom breakpoints | ❌ | ❌ | ✅ | ✅ |
-| Landscape breakpoints | ❌ | ❌ | ✅ | ✅ |
-| Platform detection | ❌ | ❌ | ❌ | ✅ |
-| ensureScreenSize | ✅ | ❌ | ❌ | ✅ |
-| Type-safe values | ❌ | ❌ | ❌ | ✅ |
-| Builder widgets | ❌ | ❌ | ✅ | ✅ |
-| AdaptiveText | ❌ | ❌ | ❌ | ✅ |
-
 ## License
 
 BSD-3-Clause License - see [LICENSE](LICENSE) for details.
