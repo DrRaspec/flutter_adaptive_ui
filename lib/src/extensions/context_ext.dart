@@ -164,4 +164,52 @@ extension AdaptiveContextExtension on BuildContext {
         return xl ?? lg ?? md ?? sm ?? xs;
     }
   }
+
+  // ===== Orientation Values =====
+
+  /// Gets a value based on the current orientation.
+  ///
+  /// ```dart
+  /// final columns = context.orientationValue<int>(
+  ///   portrait: 2,
+  ///   landscape: 4,
+  /// );
+  /// ```
+  T orientationValue<T>({required T portrait, required T landscape}) {
+    return isPortrait ? portrait : landscape;
+  }
+
+  /// Gets a value based on device type AND orientation.
+  ///
+  /// ```dart
+  /// final padding = context.adaptiveOrientation<double>(
+  ///   phonePortrait: 16,
+  ///   phoneLandscape: 8,
+  ///   tabletPortrait: 24,
+  ///   tabletLandscape: 16,
+  /// );
+  /// ```
+  T adaptiveOrientation<T>({
+    required T phonePortrait,
+    T? phoneLandscape,
+    T? tabletPortrait,
+    T? tabletLandscape,
+    T? desktopPortrait,
+    T? desktopLandscape,
+  }) {
+    final landscape = isLandscape;
+
+    switch (deviceType) {
+      case DeviceType.phone:
+        return landscape ? (phoneLandscape ?? phonePortrait) : phonePortrait;
+      case DeviceType.tablet:
+        final portrait = tabletPortrait ?? phonePortrait;
+        return landscape ? (tabletLandscape ?? portrait) : portrait;
+      case DeviceType.desktop:
+        final portrait = desktopPortrait ?? tabletPortrait ?? phonePortrait;
+        return landscape ? (desktopLandscape ?? portrait) : portrait;
+      case DeviceType.foldable:
+        return landscape ? (phoneLandscape ?? phonePortrait) : phonePortrait;
+    }
+  }
 }

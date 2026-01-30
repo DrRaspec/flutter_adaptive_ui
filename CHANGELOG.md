@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.2] - 2026-01-30
+
+### Added
+- `OrientationLayoutBuilder` widget for orientation-specific layouts
+- `OrientationLayout` simpler widget version
+- `AdaptiveOrientationBuilder` for device type + orientation combinations
+- `context.orientationValue()` method for orientation-based values
+- `context.adaptiveOrientation()` method for device + orientation values
+
 ## [0.1.1] - 2026-01-30
 
 ### Changed

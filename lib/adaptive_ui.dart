@@ -41,3 +41,4 @@ export 'src/widgets/adaptive_builder.dart';
 export 'src/widgets/responsive_builder.dart';
 export 'src/widgets/visibility.dart';
 export 'src/widgets/adaptive_text.dart';
+export 'src/widgets/orientation_builder.dart';

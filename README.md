@@ -151,6 +151,36 @@ AdaptiveScope(
 )
 ```
 
+### 8. Orientation-Specific Layouts
+
+```dart
+// Simple orientation builder
+OrientationLayoutBuilder(
+  portrait: (context, info) => PortraitLayout(),
+  landscape: (context, info) => LandscapeLayout(),
+)
+
+// Or use the simpler widget version
+OrientationLayout(
+  portrait: PortraitWidget(),
+  landscape: LandscapeWidget(),
+)
+
+// Get values based on orientation
+final columns = context.orientationValue<int>(
+  portrait: 2,
+  landscape: 4,
+);
+
+// Combine device type + orientation
+final padding = context.adaptiveOrientation<double>(
+  phonePortrait: 16,
+  phoneLandscape: 8,
+  tabletPortrait: 24,
+  tabletLandscape: 16,
+);
+```
+
 ## API Reference
 
 ### Configuration Classes
