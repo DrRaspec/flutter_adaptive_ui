@@ -1,6 +1,6 @@
 import 'dart:ui' show Size;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_adaptive_kit/adaptive_ui.dart';
+import 'package:flutter_adaptive_kit/flutter_adaptive_kit.dart';
 
 void main() {
   group('AdaptiveBreakpoints', () {

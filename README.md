@@ -34,7 +34,7 @@ dependencies:
 ### 1. Wrap your app with AdaptiveScope
 
 ```dart
-import 'package:adaptive_ui/adaptive_ui.dart';
+import 'package:flutter_adaptive_kit/flutter_adaptive_kit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

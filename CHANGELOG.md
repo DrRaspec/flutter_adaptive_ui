@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.3] - 2026-01-30
+
+### Changed
+- Renamed library file to `flutter_adaptive_kit.dart` to match package name
+- Updated example app with `OrientationDemo` widget
+
 ## [0.1.2] - 2026-01-30
 
 ### Added
