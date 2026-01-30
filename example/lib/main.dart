@@ -105,6 +105,8 @@ class PhoneLayout extends StatelessWidget {
         children: [
           const DeviceInfoCard(),
           SizedBox(height: AdaptiveSpacing.md(context)),
+          const OrientationDemo(),
+          SizedBox(height: AdaptiveSpacing.md(context)),
           const ExtensionsDemo(),
           SizedBox(height: AdaptiveSpacing.md(context)),
           const ResponsiveGridDemo(),
@@ -143,7 +145,6 @@ class TabletLayout extends StatelessWidget {
           ],
         ),
         const VerticalDivider(thickness: 1, width: 1),
-        // Main content
         Expanded(
           child: SingleChildScrollView(
             padding: EdgeInsets.all(AdaptiveSpacing.lg(context)),
@@ -151,6 +152,8 @@ class TabletLayout extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const DeviceInfoCard(),
+                SizedBox(height: AdaptiveSpacing.lg(context)),
+                const OrientationDemo(),
                 SizedBox(height: AdaptiveSpacing.lg(context)),
                 const ExtensionsDemo(),
                 SizedBox(height: AdaptiveSpacing.lg(context)),
@@ -436,6 +439,104 @@ class ResponsiveGridDemo extends StatelessWidget {
                   ),
                 );
               },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Demo showing orientation-specific layouts
+class OrientationDemo extends StatelessWidget {
+  const OrientationDemo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Padding(
+        padding: EdgeInsets.all(AdaptiveSpacing.md(context)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Orientation Demo',
+              style: TextStyle(
+                fontSize: AdaptiveFontSize.title(context),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: AdaptiveSpacing.sm(context)),
+            // Show current orientation
+            Chip(
+              avatar: Icon(
+                context.isPortrait
+                    ? Icons.stay_current_portrait
+                    : Icons.stay_current_landscape,
+              ),
+              label: Text(
+                context.isPortrait ? 'Portrait Mode' : 'Landscape Mode',
+              ),
+            ),
+            SizedBox(height: AdaptiveSpacing.sm(context)),
+            // Orientation-specific layout
+            OrientationLayout(
+              portrait: Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.green.shade100,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Column(
+                  children: [
+                    Icon(Icons.phone_android, size: 32),
+                    SizedBox(height: 8),
+                    Text('Portrait Layout'),
+                    Text('Stacked vertically'),
+                  ],
+                ),
+              ),
+              landscape: Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.orange.shade100,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.phone_android, size: 32),
+                    SizedBox(width: 16),
+                    Column(
+                      children: [
+                        Text('Landscape Layout'),
+                        Text('Side by side'),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: AdaptiveSpacing.sm(context)),
+            // Orientation-specific values
+            Text(
+              'Orientation Values:',
+              style: TextStyle(fontSize: AdaptiveFontSize.body(context)),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Columns: ${context.orientationValue<int>(portrait: 2, landscape: 4)}',
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.secondary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Padding: ${context.adaptiveOrientation<double>(phonePortrait: 16, phoneLandscape: 8, tabletPortrait: 24, tabletLandscape: 16).toInt()}px',
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.secondary,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),
