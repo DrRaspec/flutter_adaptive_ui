@@ -1,8 +1,8 @@
-# Adaptive UI
+# Flutter Adaptive Kit
 
 A comprehensive Flutter package for building responsive and adaptive user interfaces. Combines the best features from popular packages like flutter_screenutil, responsive_builder, responsive_framework, and sizer into one unified API.
 
-[![pub package](https://img.shields.io/pub/v/adaptive_ui.svg)](https://pub.dev/packages/adaptive_ui)
+[![pub package](https://img.shields.io/pub/v/flutter_adaptive_kit.svg)](https://pub.dev/packages/flutter_adaptive_kit)
 [![License: BSD-3-Clause](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](LICENSE)
 
 ## Features
@@ -25,8 +25,9 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  adaptive_ui: ^0.1.0
+  flutter_adaptive_kit: ^0.1.0
 ```
+
 
 ## Quick Start
 

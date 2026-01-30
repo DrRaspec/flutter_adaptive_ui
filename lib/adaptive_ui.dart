@@ -1,4 +1,4 @@
-/// Adaptive UI - A comprehensive Flutter package for building responsive and adaptive UIs.
+/// Flutter Adaptive Kit - A comprehensive Flutter package for building responsive and adaptive UIs.
 ///
 /// This package provides:
 /// - Device type detection (phone, tablet, desktop, foldable)
