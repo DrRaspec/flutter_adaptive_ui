@@ -1,0 +1,17 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    # Treat these as warnings, not errors
+    sort_constructors_first: info
+    sort_unnamed_constructors_first: info
+    require_trailing_commas: info
+
+linter:
+  rules:
+    avoid_print: true
+    prefer_single_quotes: true
+    # Disable strict rules that cause noise
+    sort_constructors_first: false
+    sort_unnamed_constructors_first: false
+    require_trailing_commas: false
